@@ -1,6 +1,15 @@
 from flask import Flask, render_template
-import data
+import json
 
+WEEKDAYS = {
+    'mon': 'Понедельник',
+    'tue': 'Вторник',
+    'wed': 'Среда',
+    'thu': 'Четверг',
+    'fri': 'Пятница',
+    'sat': 'Суббота',
+    'sun': 'Воскресенье',
+}
 
 app = Flask(__name__)
 
@@ -18,10 +27,14 @@ def show_all_tutors():
 def find_goal(goal):
     return render_template("goal.html")
 
-
+# ToDo
 @app.route('/profiles/<profile_id>')
 def show_tutor_profile(profile_id):
-    return render_template("profile.html")
+    with open('data_teachers.json', 'r') as data_file:
+        teachers = json.load(data_file)
+
+    return render_template("profile.html", data=teachers[int(profile_id)],
+                           weekdays=WEEKDAYS, profile_id=profile_id)
 
 
 @app.route('/request/')

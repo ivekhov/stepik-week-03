@@ -14,7 +14,7 @@ teachers = [
 
             "mon": {"8:00": False, "10:00": True, "12:00": True, "14:00": False, "16:00": False, "18:00": False,
                     "20:00": False, "22:00": False},
-            "tue": {"8:00": True, "10:00": True, "12:00": False, "14:00": False, "16:00": False, "18:00": False,
+            "tue": {"8:00": False, "10:00": False, "12:00": False, "14:00": False, "16:00": False, "18:00": False,
                     "20:00": False, "22:00": False},
             "wed": {"8:00": True, "10:00": True, "12:00": False, "14:00": False, "16:00": False, "18:00": False,
                     "20:00": False, "22:00": False},
