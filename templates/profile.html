@@ -55,7 +55,7 @@
                 {% for key, value in data['free'][day].items(): %}
 
                   {% if value == True: %}
-                    <a href="/booking/{{profile_id}}/{{day}}/{{key[:2]}}" class="btn btn-outline-success mr-2">{{ key }} свободно</a>
+                    <a href="/booking/{{profile_id}}/{{day}}/{{key.split(':')[0]}}" class="btn btn-outline-success mr-2">{{ key }} свободно</a>
                   {% endif %}
 
                 {% endfor %}
